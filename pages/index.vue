@@ -19,7 +19,7 @@ const poster= ref("https://www.themoviedb.org/t/p/w600_and_h900_bestv2/74xTEgt7R
 
 <template>
     <div>
-       <SearchBar @search-movie="SearchMovie" :searchError="searchError"/>
+       <SearchBar @search-movie="searchMovieearchMovie" :searchError="searchError"/>
     <div class="grid md:grid-cols-4 sm:grid-cols-2 justify-items-center bg-stone-800">
     <div v-for="n in 8">
     <MovieCard 
