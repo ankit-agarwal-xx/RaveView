@@ -21,7 +21,7 @@ const trailer = computed(() => {
 </script>
 
 <template>
-  <div>
+  <div class="bg-black h-screen">
     <MovieDetail
       :title="movie.title"
       :date="movie.release_date"

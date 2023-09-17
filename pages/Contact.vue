@@ -1,21 +1,21 @@
 <script setup></script>
 
 <template>
-  <div class="flex flex-col md:flex-row">
+  <div class="flex flex-col md:flex-row bg-black text-white">
     <div class="md:w-1/2 p-8">
       <img
-        src="https://cdn.pixabay.com/photo/2015/11/03/08/58/meeting-1019875_960_720.jpg"
+        src="https://img1.wsimg.com/isteam/ip/ca1b7784-3ee7-45c1-8aab-2d901a540a3b/MV5BNjg4Yjc4N2YtMDUxMC00ODU5LWJlNmUtYjIwYWI0MW.jpg"
         alt="Contact Us"
       />
     </div>
     <div class="md:w-1/2 p-8 shadow-md">
       <p class="text-lg mb-2">
-        123 Main Street<br />
-        Ranchi, India 12345
+        777 Main Street<br />
+        Morioh, Japan 48911
       </p>
       <p class="text-lg mb-2">
         Phone: (123) 456-7890<br />
-        Email: info@geekyshows.com
+        Email: info@raveview.com
       </p>
       <form>
         <label for="name" class="block text-lg font-bold mb-2">Name</label>

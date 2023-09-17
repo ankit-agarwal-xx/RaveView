@@ -4,11 +4,11 @@ defineProps(["searchError"]);
 </script>
 
 <template>
-  <section class="search-section py-4">
-    <div class="container mx-auto md:px-40 px-5">
+  <section class="bg-stone-800 search-section py-4">
+    <div class=" container mx-auto md:px-40 px-5">
       <div class="flex">
         <input
-          class="border border-black py-2 px-4 w-full rounded-l-full focus:outline-none focus:ring-2 focus:ring-cyan-50"
+          class=" border border-black py-2 px-4 w-full rounded-l-full focus:outline-none focus:ring-2 focus:ring-cyan-50"
           type="text"
           placeholder="Search Movie..."
           v-model.lazy="searchInput"
