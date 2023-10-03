@@ -5,5 +5,6 @@ import { Navbar } from '../.nuxt/components';
     <div class="bg-black h-screen">
         <Navbar/>
         <slot/>
+        <Footer/>
     </div>
 </template>
