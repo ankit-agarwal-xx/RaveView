@@ -6,5 +6,6 @@ import { Navbar } from '../.nuxt/components';
         <Navbar/>
         <Hero/>
         <slot/>
+        <Footer/>
     </div>
 </template>
