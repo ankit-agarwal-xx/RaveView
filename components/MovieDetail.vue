@@ -1,5 +1,5 @@
 <template>
-  <div class="grid sm:grid-cols-3 gap-7 justify-items-center m-10 bg-black text-white">
+  <div class="grid sm:grid-cols-3 gap-7 justify-items-center bg-black text-white">
     <!--Movie Poster -->
      <div class="bg-black rounded-lg shadow-md overflow-hidden">
       <img
@@ -8,6 +8,7 @@
         alt="Placeholder Image"
       />
     </div>
+    
 
     <!--  Title, Overview, revenue, Buy Button -->
     <div class="sm:col-span-2 mx-6">
@@ -44,6 +45,7 @@
           </button>
         </div>
         <button @click="postReview" class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded">Post Review</button>
+        <p v-if="isSubmitted" class="text-green-500 mt-2">Review submitted successfully!</p>
       </div>
 
       <!-- Display Reviews -->
@@ -62,19 +64,46 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+import { supabase } from '~/plugins/supabase';
+
 defineProps(["title", "date", "poster", "revenue", "overview", "trailer"]);
+
 const username = ref('');
 const review = ref('');
 const rating = ref(0);
 const reviews = ref([]);
-const postReview = () => {
-  // list of reviews
-  reviews.value.push({ username: username.value, text: review.value, rating: rating.value });
-  // Clear the input
-  username.value = '';
-  review.value = '';
-  rating.value = 0;
+const isSubmitted = ref(false); 
+
+const postReview = async () => {
+  const { data, error } = await supabase
+    .from('reviews') 
+    .insert([
+      { username: username.value, text: review.value, rating: rating.value },
+    ]);
+
+  if (error) {
+    console.error('Error inserting data: ', error);
+  } else {
+    // Clear the input
+    username.value = '';
+    review.value = '';
+    rating.value = 0;
+    isSubmitted.value = true; 
+  }
 };
+
+onMounted(async () => {
+  const { data, error } = await supabase
+    .from('reviews') 
+    .select('*');
+
+  if (error) {
+    console.error('Error fetching data: ', error);
+  } else {
+    reviews.value = data;
+  }
+});
 </script>
 
 <style scoped>

@@ -1,5 +1,5 @@
 <template>
-    <footer class="container mx-auto py-8 text-white space-x-8 bg-stone-800 flex justify-center items-center">
+    <footer class=" mx-auto py-8 text-white space-x-8 bg-stone-800 flex justify-center items-center">
       <div>
         © 2023 Rave View. All rights reserved.
       </div>
